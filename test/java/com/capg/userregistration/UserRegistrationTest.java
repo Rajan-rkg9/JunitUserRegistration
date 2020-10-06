@@ -1,7 +1,7 @@
 package com.capg.userregistration;
 
 import static org.junit.Assert.assertEquals;
-
+import com.capg.userregistration.InvalidUserException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
