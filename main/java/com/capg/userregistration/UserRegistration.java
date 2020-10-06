@@ -8,43 +8,68 @@ public class UserRegistration {
 	private static final String PASSWORD_PATTERN = "(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9 ]).{8,}";
 	
 	
-	public boolean validateFirstName(String firstName)
+	public boolean validateFirstName(String firstName) throws InvalidUserException
 	{
-		if(firstName.matches(FIRST_NAME_PATTERN))
-			return true;
-		else
-			return false;
+		try {
+			if(firstName.matches(FIRST_NAME_PATTERN))
+				return true;
+			else
+				throw new InvalidUserException("Invalid First Name.");
+		}
+		catch (Exception e) {  //For any input other than correct and wrong format .e.g input is null.
+			throw new InvalidUserException("Invalid First Name.");
+		}
 	}
 	
-	public boolean validateLastName(String lastName)
+	public boolean validateLastName(String lastName) throws InvalidUserException 
 	{
-		if(lastName.matches(LAST_NAME_PATTERN))
-			return true;
-		else
-			return false;
+		try {
+			if(lastName.matches(LAST_NAME_PATTERN))
+				return true;
+			else
+				throw new InvalidUserException("Invalid Last Name.");
+		}
+		catch (Exception e) { //For any input other than correct and wrong format .e.g input is null.
+			throw new InvalidUserException("Invalid Last Name.");
+		}
 	}
 	
-	public boolean validateEmailId(String emailId)
+	public boolean validateEmailId(String emailId) throws InvalidUserException
 	{
-		if(emailId.matches(EMAIL_ID_PATTERN))
-			return true;
-		else
-			return false;
+		try {
+			if(emailId.matches(EMAIL_ID_PATTERN))
+				return true;
+			else
+				throw new InvalidUserException("Invalid Email Id.");
+		}
+		catch (Exception e) {  //For any input other than correct and wrong format .e.g input is null.
+			throw new InvalidUserException("Invalid Email Id.");
+		}
 	}
 	
-	public boolean validateMobileNumber(String mobileNumber)
+	public boolean validateMobileNumber(String mobileNumber) throws InvalidUserException
 	{
-		if(mobileNumber.matches(MOBILE_NUMBER_PATTERN))
-			return true;
-		else
-			return false;
+		try {
+			if(mobileNumber.matches(MOBILE_NUMBER_PATTERN))
+				return true;
+			else
+				throw new InvalidUserException("Invalid Mobile Number.");
+		}
+		catch (Exception e) {  //For any input other than correct and wrong format .e.g input is null.
+			throw new InvalidUserException("Invalid Mobile Number.");
+		}
 	}
 	
-	public boolean validatePassword(String password)
+	public boolean validatePassword(String password) throws InvalidUserException
 	{
-		if(password.matches(PASSWORD_PATTERN))
-			return true;
-		else
-			return false;
+		try {
+			if(password.matches(PASSWORD_PATTERN))
+				return true;
+			else
+				throw new InvalidUserException("Invalid Password.");
+		}
+		catch (Exception e) {  //For any input other than correct and wrong format .e.g input is null.
+			throw new InvalidUserException("Invalid Password.");
+		}
 	}
 }
